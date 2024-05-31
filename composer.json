@@ -1,0 +1,20 @@
+{
+    "name": "dexters/todo",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "discodexter",
+            "email": "emils.timma@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^2.72",
+        "symfony/console": "^5.4",
+      "ext-json": "*",
+      "ext-readline": "*"
+    }
+}
