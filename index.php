@@ -35,7 +35,7 @@ class Machine
     {
         if (isset($this->list[$index])) {
             unset($this->list[$index]);
-            $this->list = array_values($this->list); // Reindex the array
+            $this->list = array_values($this->list);
             $this->saveListToFile();
         }
     }
@@ -57,7 +57,7 @@ class Machine
         }
 
         $jsonData = file_get_contents($filePath);
-        $data = json_decode($jsonData, true); // Decode as associative array
+        $data = json_decode($jsonData, true);
 
         $list = [];
         foreach ($data as $item) {
@@ -78,7 +78,7 @@ class Machine
             $timeCell = $item->getTime();
             $doneCell = $item->getIsDone();
 
-            // Apply style if the task is done
+
             if ($item->getIsDone() === 'yes') {
                 $rows[] = [
                     new TableCell($index, ['style' => new TableCellStyle(['fg' => 'green'])]),
