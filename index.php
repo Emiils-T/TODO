@@ -8,6 +8,7 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Helper\TableCell;
 use Symfony\Component\Console\Helper\TableCellStyle;
+
 class Machine
 {
     private array $list;
@@ -96,7 +97,7 @@ class Machine
 $keepWorking = true;
 while ($keepWorking) {
     echo "1. Create new TODO.\n2. Show TODO list.\n3. Mark done\n4. Delete TODO\n5. Quit\n";
-    $choice = (int) readline("Enter index to select choice: ");
+    $choice = (int)readline("Enter index to select choice: ");
 
     $machine = new Machine();
 
@@ -120,11 +121,11 @@ while ($keepWorking) {
             $table->render();
             break;
         case 3:
-            $index = (int) readline("Enter the index of the TODO to mark as done: ");
+            $index = (int)readline("Enter the index of the TODO to mark as done: ");
             $machine->markTODOAsDone($index);
             break;
         case 4:
-            $index = (int) readline("Enter the index of the TODO to delete: ");
+            $index = (int)readline("Enter the index of the TODO to delete: ");
             $machine->removeTODOAtIndex($index);
             break;
         case 5:
